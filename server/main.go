@@ -28,8 +28,9 @@ func isAuthorized(endpoint func(http.ResponseWriter, *http.Request)) http.Handle
 			if token.Valid {
 				endpoint(w, r)
 			}
+			fmt.Println(token)
 		} else {
-			fmt.Fprintf(w, "Not Authorized")
+			fmt.Fprintf(w, "No Authorization Token provided")
 		}
 	})
 }
