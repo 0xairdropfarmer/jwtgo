@@ -40,7 +40,7 @@ func GenerateJWT() (string, error) {
 	claims := token.Claims.(jwt.MapClaims)
 
 	claims["authorized"] = true
-	claims["client"] = "Elliot Forbes"
+	claims["client"] = "Krissanawat"
 	claims["aud"] = "billing.jwtgo.io"
 	claims["iss"] = "jwtgo.io"
 	claims["exp"] = time.Now().Add(time.Minute * 1).Unix()
